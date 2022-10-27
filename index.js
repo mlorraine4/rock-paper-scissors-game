@@ -22,7 +22,7 @@ function playRound(computerChoice) {
   if (computerChoice === playerChoice) {
     alert('tie');
   } else if (computerChoice === 'rock' && playerChoice === 'scissors') {
-    youwin();
+    youWin();
   } else if (computerChoice === 'rock' && playerChoice === 'paper') {
     ++computerScore
     alert('you lose!');
