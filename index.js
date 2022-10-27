@@ -1,15 +1,36 @@
 let playerScore = 0
 let computerScore = 0
+let button = document.querySelectorAll('#btn');
+var playerChoice = '';
+var computerChoice = '';
+
+let results = document.getElementById('results')
+results.textContent = 'Player score: 0 Computer score: 0'
+
+for (i=0; i<button.length; i++) {
+  button[i].addEventListener('click', function() {
+    playerChoice = this.innerHTML;
+    console.log(playerChoice);
+    getRandomChoice();
+    playRound();
+    results.textContent = 'Player score: ' + playerScore + ' Computer score: ' +computerScore
+    if (computerScore === 5) {
+      results.textContent = 'Computer wins the game!'
+    }
+    if (playerScore === 5) {
+      results.textContent = 'Congrats! You win the game!'
+    }
+  });
+}
 
 function getRandomChoice() {
   let randomNumber = Math.floor(Math.random()* 3);
-  let randomChoice = '';
     if (randomNumber === 0) {
-    randomChoice = 'rock';
+    computerChoice = 'rock';
     } else if (randomNumber === 1) {
-      randomChoice = 'paper';
-    } else randomChoice = 'scissors';
-  playRound(randomChoice);
+      computerChoice = 'paper';
+    } else computerChoice = 'scissors';
+    console.log(computerChoice);
 }
 
 function youWin() {
@@ -17,8 +38,7 @@ function youWin() {
     alert('you win!');
 }
 
-function playRound(computerChoice) {
-  var playerChoice = prompt('enter rock, paper, or scissors');
+function playRound() {
   if (computerChoice === playerChoice) {
     alert('tie');
   } else if (computerChoice === 'rock' && playerChoice === 'scissors') {
@@ -38,17 +58,3 @@ function playRound(computerChoice) {
     alert('you lose!');
   } else console.log('what?');
 }
-
-function game() {
-  for (let i = 0; i < 4; i++) {
-    getRandomChoice();
-  }
-  if (playerScore > computerScore) {
-    console.log("You're the winner! Final Score: " + playerScore + " to: " + computerScore);
-  } else if (computerScore > playerScore) {
-    console.log("You're the loser. Final Score: " + computerScore + " to: " + playerScore);
-  } else
-    alert("It's a tie! Both scores are: " + playerScore);
-}
-
-game();
