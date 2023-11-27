@@ -8,9 +8,29 @@ h1 {
   text-align: center;
 }
 
-#buttons {
+#container {
+  margin: 40px auto 0 auto;
   width: min-content;
   display: flex;
+}
+
+#results {
+  width: 500px;
+  margin: 20px auto 20px auto;
+  background-color: white;
+  color: #548ca8;
+  font-size: 25px;
+  border-radius: 25px;
+  border: 5px solid #73AD21;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.img {
+  display: block;
+  width: 75%;
+  height: 75%;
   margin: auto;
 }
 
@@ -31,17 +51,13 @@ h1 {
 .btn:hover {
   background-color: white;
   color: #73AD21;
+  cursor: pointer;
 }
 
-#results {
-  width: 500px;
-  margin: 20px auto 20px auto;
-  background-color: white;
-  color: #548ca8;
-  font-size: 25px;
-  border-radius: 25px;
-  border: 5px solid #73AD21;
-  padding: 20px;
-  text-align: center;
-  font-weight: bold;
+.item {
+  width: 30vw;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

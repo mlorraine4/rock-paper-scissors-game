@@ -7,7 +7,7 @@
 
 [Rock, Paper, Scissors](https://mlorraine4.github.io/rock-paper-scissors-game/)
 
-![Preview](preview.png)
+![Preview](images/preview.png)
 
 ## Built with
 

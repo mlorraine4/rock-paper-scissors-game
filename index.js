@@ -5,7 +5,7 @@ var playerChoice = "";
 var computerChoice = "";
 
 let results = document.getElementById("results");
-results.textContent = "Player score: 0 Computer score: 0";
+results.textContent = "Your score: 0 Computer score: 0";
 
 for (i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener("click", function () {
@@ -74,3 +74,4 @@ function playRound() {
     compWin();
   }
 }
+
